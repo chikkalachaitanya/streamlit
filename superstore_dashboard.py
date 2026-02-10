@@ -1,6 +1,7 @@
 import streamlit as st
 import plotly.express as px
 import pandas as pd
+import matplotlib.pyplot as plt
 import os
 import warnings
 warnings.filterwarnings('ignore')
@@ -136,4 +137,5 @@ with st.expander("View data"):
 
 # download original dataset
 csv = df.to_csv(index=False).encode('utf-8')
+
 st.download_button('Download data', data=csv, file_name='Data.csv', mime='text/csv')
