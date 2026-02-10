@@ -54,8 +54,7 @@ category_df = df4.groupby(by=["Category"], as_index = False)["Sales"].sum()
 
 with col1:
     st.subheader("Category wise Sales")
-    fig = px.bar(category_df, x="Category", y="Sales",text=['${:,.2f}'.format(x) for x in category_df["Sales"]], 
-                 template="seaborn")
+    fig = px.bar(category_df, x="Category", y="Sales",text=['${:,.2f}'.format(x) for x in category_df["Sales"]])
     st.plotly_chart(fig, width="stretch", height=350)
 
 with col2:
@@ -139,3 +138,4 @@ with st.expander("View data"):
 csv = df.to_csv(index=False).encode('utf-8')
 
 st.download_button('Download data', data=csv, file_name='Data.csv', mime='text/csv')
+
